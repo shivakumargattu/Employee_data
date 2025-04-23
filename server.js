@@ -75,7 +75,7 @@ app.put('/employees/:id', getEmployee, async (req, res) => {
 
 app.delete('/employees/:id', getEmployee, async (req, res) => {
     try {
-        await res.employee.remove();
+        await res.employee.deleteOne();
         res.json({ message: 'Employee Deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });
